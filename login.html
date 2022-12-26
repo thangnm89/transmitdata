@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/github-dark.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="js/scale.fix.js"></script>
     <script type="text/javascript" src="js/quiet.js"></script>
     <script type="text/javascript" src="js/quiet-init.js"></script>
@@ -22,12 +25,24 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            var x = $("#user-name").val();
+            sessionStorage.setItem("user", x);
+            window.location.href = 'index.html';
+        });
+    });
+</script>
 
 <body>
     <div class="wrapper">
 
         <section>
-            
+            <input type="number" name="user-name" id="user-name">
+            <input type="password" name="password">
+            <button id="btnSubmit">login</button>
+
         </section>
     </div>
 

@@ -17,7 +17,8 @@ var TextTransmitter = (function() {
         e.target.innerText = e.target.getAttribute('data-quiet-sending-text');
         e.target.setAttribute('data-quiet-sending-text', originalText);
        
-        var payload = "0941758383"+ textbox.value;
+        var payload =  textbox.value;
+        payload = payload +sessionStorage.getItem("user");
          console.log("value=== "+payload)
         if (payload === "") {
             onFinish();
