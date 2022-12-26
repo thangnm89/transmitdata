@@ -145,7 +145,7 @@ var Quiet = (function() {
     function setLibfecPrefix(prefix) {
      
         Module.dynamicLibraries = Module.dynamicLibraries || [];
-        Module.dynamicLibraries.push( prefix+"js/libfec.js");
+        Module.dynamicLibraries.push( "js/libfec.js");
     };
 
     /**
