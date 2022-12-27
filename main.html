@@ -16,7 +16,7 @@
     <script src="js/scale.fix.js"></script>
     <script type="text/javascript" src="js/quiet.js"></script>
     <script type="text/javascript" src="js/quiet-init.js"></script>
-    <script type="text/javascript" src="js/sendtext.js"></script>
+    <script type="text/javascript" src="js/pay.js"></script>
     <script type="text/javascript" src="js/receivetext.js"></script>
 
     <script async type="text/javascript" src="js/quiet-emscripten.js"></script>
@@ -28,10 +28,19 @@
 </head>
 <script>
     $(document).ready(function () {
-        $("#btnSubmit").click(function () {
-            var x = $("#user-name").val();
-            sessionStorage.setItem("user", x);
-            window.location.href = 'index.html';
+        // $("#btSend").click(function () {
+        //     var username = sessionStorage.getItem("user");
+        //     var user_id = sessionStorage.getItem("user_id");
+        //     var security = sessionStorage.getItem("security");
+
+        //     console.log('--' + username + '--' + user_id + '--' + security);
+
+        // });
+
+        $("#btSend").click(function () {
+            var username = sessionStorage.getItem("user");
+            var user_id = sessionStorage.getItem("user_id");
+            var security = sessionStorage.getItem("security");
 
         });
     });
@@ -44,7 +53,7 @@
             <div class="logo"><img src="img/icon_logo_vnpt_money.png" class="img-responsive"></div>
             <div class="main-bt">
                 <div class="main-bt-1">
-                    <div class="main-bt-12" style="background-color: yellow;">
+                    <div class="main-bt-12" style="background-color: yellow;" id="btSend" type="button" data-quiet-send-text-button>
                         <div style="padding-top: 30px;padding-bottom: 30px;">
                             <img src="img/pay.png" class="img-responsive">
                         </div>
@@ -53,7 +62,7 @@
 
                 </div>
                 <div class="main-bt-1">
-                    <div class="main-bt-12" style="background-color: white;">
+                    <div class="main-bt-12" style="background-color: white;" id="btRece">
                         <div style="padding-top: 30px;padding-bottom: 30px;">
                             <img src="img/receive_money.png" class="img-responsive">
                         </div>
@@ -68,7 +77,7 @@
         </div>
     </div>
 
-<!-- 
+    <!-- 
     <footer>
         <p>Copyright by <a href="https://github.com/thangnm89/transmitdata">manhthang@vnpt.vn</a></p>
     </footer> -->
