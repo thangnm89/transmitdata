@@ -5,10 +5,10 @@ var TextTransmitter = (function () {
 
     function onTransmitFinish(btn) {
         textbox.focus();
-        btn.disabled = false;
-        var originalText = btn.innerText;
-        btn.innerText = btn.getAttribute('data-quiet-sending-text');
-        btn.setAttribute('data-quiet-sending-text', originalText);
+        // btn.disabled = false;
+        // var originalText = btn.innerText;
+        // btn.innerText = btn.getAttribute('data-quiet-sending-text');
+        // btn.setAttribute('data-quiet-sending-text', originalText);
     };
 
     function onClick(e, transmit) {
