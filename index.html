@@ -36,12 +36,14 @@
 
             $.ajax({
                 type: 'GET',
-                dataType: "jsonp",
-                url: 'https://github.vnptmedia.vn/login?u='+x+'&p='+y+'&c=web',
-                // headers: {
-                //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBWZXIiOiIwLjAuMCIsImV4cCI6NDcyNjM4OTEyMiwibG9jYWxlIjoiIiwibWFzdGVyVmVyIjoiIiwicGxhdGZvcm0iOiIiLCJwbGF0Zm9ybVZlciI6IiIsInVzZXJJZCI6IiJ9.QIZbmB5_9Xlap_gDhjETfMI6EAmR15yBtIQkWFWJkrg',
-
-                // },
+                contentType: 'application/json',
+                url: 'https://github.vnptmedia.vn/login?u=' + x + '&p=' + y + '&c=web',
+                headers: {
+                    'Access-Control-Allow-Credentials': true,
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET',
+                    'Access-Control-Allow-Headers': 'application/json',
+                },
                 success: function (data, status, xhr) {
                     console.log('data: ', data);
                 }
