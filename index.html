@@ -30,9 +30,23 @@
     $(document).ready(function () {
         $("#btnSubmit").click(function () {
             var x = $("#user-name").val();
+            var y = $("#pw").val();
             sessionStorage.setItem("user", x);
-            window.location.href = 'main.html';
-            
+            // window.location.href = 'main.html';
+
+            $.ajax({
+                type: 'GET',
+                dataType: "jsonp",
+                url: 'https://github.vnptmedia.vn/login?u='+x+'&p='+y+'&c=web',
+                // headers: {
+                //     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBWZXIiOiIwLjAuMCIsImV4cCI6NDcyNjM4OTEyMiwibG9jYWxlIjoiIiwibWFzdGVyVmVyIjoiIiwicGxhdGZvcm0iOiIiLCJwbGF0Zm9ybVZlciI6IiIsInVzZXJJZCI6IiJ9.QIZbmB5_9Xlap_gDhjETfMI6EAmR15yBtIQkWFWJkrg',
+
+                // },
+                success: function (data, status, xhr) {
+                    console.log('data: ', data);
+                }
+            });
+
         });
     });
 </script>
@@ -42,11 +56,11 @@
     <div class="wrapper">
         <div class="form">
             <h2>Đăng nhập bằng tài khoản ví</h2>
-          
-                <input type="text" name="username" placeholder="Số ví" id="user-name"/>
-                <input type="password" name="password" placeholder="Mật khẩu" />
-                <button id="btnSubmit">Đăng nhập</button>
-           
+
+            <input type="text" name="username" placeholder="Số ví" id="user-name" />
+            <input type="password" name="password" placeholder="Mật khẩu" id="pw" />
+            <button id="btnSubmit">Đăng nhập</button>
+
         </div>
     </div>
 
