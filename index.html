@@ -31,7 +31,7 @@
         $("#btnSubmit").click(function () {
             var x = $("#user-name").val();
             var y = $("#pw").val();
-            sessionStorage.setItem("user", x);
+           
             // window.location.href = 'main.html';
 
             $.ajax({
@@ -47,7 +47,11 @@
                 success: function (data, status, xhr) {
                     console.log('data: ', data);
                     if(data.status === 1){
-                        
+                        sessionStorage.setItem("user", data.username);
+                        sessionStorage.setItem("user_id", data.user_id);
+                        sessionStorage.setItem("security", data.security);
+                        window.location.href = 'main.html';
+
 
                     }else{
                         alert('Lỗi đăng nhập!');
