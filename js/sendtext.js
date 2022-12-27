@@ -18,7 +18,8 @@ var TextTransmitter = (function() {
         e.target.setAttribute('data-quiet-sending-text', originalText);
        
         var payload =  textbox.value;
-        // payload = payload +sessionStorage.getItem("user");
+        var x = sessionStorage.getItem("user");
+        payload = payload + x;
          console.log("value=== "+payload)
         if (payload === "") {
             onFinish();
