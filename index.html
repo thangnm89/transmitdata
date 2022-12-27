@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>transmit data via quite</title>
@@ -8,71 +9,52 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/github-dark.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="js/scale.fix.js"></script>
     <script type="text/javascript" src="js/quiet.js"></script>
     <script type="text/javascript" src="js/quiet-init.js"></script>
     <script type="text/javascript" src="js/sendtext.js"></script>
     <script type="text/javascript" src="js/receivetext.js"></script>
-   
+
     <script async type="text/javascript" src="js/quiet-emscripten.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
+</head>
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            var x = $("#user-name").val();
+            sessionStorage.setItem("user", x);
+            window.location.href = 'main.html';
+            
+        });
+    });
+</script>
+
+<body>
+
     <div class="wrapper">
-      
-        <section>
-        
-
-        <pre style="border: unset; border-radius: unset;">Receive Text</pre>
-        <div class="form-group" data-quiet-profile-name="audible" data-quiet-receive-text>
-          <div class="alert alert-danger hidden" data-quiet-receive-text-warning></div>
-          <pre data-quiet-receive-text-target class="hidden">Your received text will show up here. Waiting...</pre>
-          <button type="button" class="btn btn-default" style="width:100%" data-quiet-receive-text-button data-quiet-receiving-text="Listening...">Start Audible Receiver</button>
+        <div class="form">
+            <h2>Đăng nhập bằng tài khoản ví</h2>
+          
+                <input type="text" name="username" placeholder="Số ví" id="user-name"/>
+                <input type="password" name="password" placeholder="Mật khẩu" />
+                <button id="btnSubmit">Đăng nhập</button>
+           
         </div>
-        <div class="form-group" data-quiet-profile-name="ultrasonic-experimental" data-quiet-receive-text>
-          <div class="alert alert-danger hidden" data-quiet-receive-text-warning></div>
-          <pre data-quiet-receive-text-target class="hidden">Your received text will show up here. Waiting...</pre>
-          <button type="button" class="btn btn-default" style="width:100%;display:none" style=" " data-quiet-receive-text-button data-quiet-receiving-text="Listening...">Start Ultrasonic Receiver</button>
-        </div>
-
-        <pre style="border: unset; border-radius: unset;">Send Text</pre>
-        <div class="alert alert-danger hidden" data-quiet-send-text-warning></div>
-        <div class="form-group">
-          <textarea autofocus="true" autocapitalize="none" autocomplete="off" spellcheck="off" class="form-control" style="resize:none" rows="5" data-quiet-text-input></textarea>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-default" style="width:100%" data-quiet-send-text-button data-quiet-sending-text="Sending..." data-quiet-profile-name="audible">Send (Audible)</button>
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn btn-default" style="width:100%;display:none" style=" " data-quiet-send-text-button data-quiet-sending-text="Sending..." data-quiet-profile-name="ultrasonic-experimental">Send (Ultrasonic)</button>
-        </div>
-
-       
-
-        <div class="alert alert-danger hidden" data-quiet-receive-image-warning></div>
-        <p data-quiet-receive-image-target class="hidden">Your received image will show up here. Waiting...</p>
-        <div class="form-group" style=" display:none" >
-          <button type="button" class="btn btn-default" style="width:100%" data-quiet-receive-image-button data-quiet-receiving-text="Listening..." data-quiet-profile-name="cable-highspeed">Start Receiver</button>
-        </div>
-
-        <span class="btn btn-default" style="width:100%; position: relative; margin-bottom: 20px ; display:none">
-            Choose an image<input type="file" id="file_input" name="file_input" data-quiet-file-input="" style="min-width: 100%; min-height: 100%; opacity: 0; position: absolute; top: 0; left: 0">
-        </span>
-        <div class="form-group" style=" display:none">
-          <button type="button" class="btn btn-default" style="width:100%" data-quiet-send-image-button data-quiet-sending-text="Sending..." data-quiet-profile-name="cable-64k">Send</button>
-        </div>
-
-        
-
-      </section>
     </div>
+
+
     <footer>
-      <p>Copyright by <a href="https://github.com/thangnm89/transmitdata">manhthang@vnpt.vn</a></p>
+        <p>Copyright by <a href="https://github.com/thangnm89/transmitdata">manhthang@vnpt.vn</a></p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-  </body>
+</body>
+
 </html>
