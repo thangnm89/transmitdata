@@ -24,6 +24,7 @@ var TextReceiver = (function () {
 
     function onQuietReady() {
         var profilename = document.querySelector('[data-quiet-profile-name]').getAttribute('data-quiet-profile-name');
+        console.log('----'+profilename);
         Quiet.receiver({
             profile: profilename,
             onReceive: onReceive,
