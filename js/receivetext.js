@@ -45,7 +45,7 @@ var TextReceiver = (function () {
         recvObj.target.classList.remove('hidden');
     }
 
-    function setupReceiver(receiver,result) {
+    function setupReceiver(receiver) {
         var recvObj = {
             profilename: receiver.getAttribute('data-quiet-profile-name'),
             btn: receiver.querySelector('[data-quiet-receive-text-button]'),
@@ -64,7 +64,7 @@ var TextReceiver = (function () {
 
     function onQuietReady() {
         for (var i = 0; i < receivers.length; i++) {
-            setupReceiver(receivers[i],result);
+            setupReceiver(receivers[i]);
         }
     };
 
