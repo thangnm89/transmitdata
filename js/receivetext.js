@@ -1,5 +1,6 @@
 var TextReceiver = (function() {
     var receivers;
+    var result;
 
     function onReceive(recvPayload, recvObj) {
         recvObj.content = Quiet.mergeab(recvObj.content, recvPayload);
@@ -50,8 +51,10 @@ var TextReceiver = (function() {
             warningbox: receiver.querySelector('[data-quiet-receive-text-warning]'),
             successes: 0,
             failures: 0,
-            content: new ArrayBuffer(0)
+            content: new ArrayBuffer(0),
+            
         };
+        result = target;
         var onBtnClick = function(e) { return onClick(e, recvObj); };
         recvObj.btn.addEventListener('click', onBtnClick, false);
     };
@@ -71,6 +74,7 @@ var TextReceiver = (function() {
 
     function onDOMLoad() {
         receivers = document.querySelectorAll('[data-quiet-receive-text]');
+        result = document.querySelector('[result]');
         Quiet.addReadyCallback(onQuietReady, onQuietFail);
     };
 
