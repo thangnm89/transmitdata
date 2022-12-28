@@ -31,7 +31,7 @@
     async function main() {
         const quiet = await new Quiet(
             audioContext,
-            quietProfiles.ultrasonic - fsk - fast,
+           'ultrasonic-fsk-fast'
         ).init();
         const received = document.querySelector('#received-text');
         quiet.receive((data) => {
