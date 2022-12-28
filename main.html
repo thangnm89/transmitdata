@@ -26,25 +26,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<script>
-    $(document).ready(function () {
-        // $("#btSend").click(function () {
-        //     var username = sessionStorage.getItem("user");
-        //     var user_id = sessionStorage.getItem("user_id");
-        //     var security = sessionStorage.getItem("security");
 
-        //     console.log('--' + username + '--' + user_id + '--' + security);
-
-        // });
-
-        // $("#btSend").click(function () {
-        //     var username = sessionStorage.getItem("user");
-        //     var user_id = sessionStorage.getItem("user_id");
-        //     var security = sessionStorage.getItem("security");
-
-        // });
-    });
-</script>
 
 <body>
 
@@ -71,22 +53,27 @@
 
                 </div>
 
-               
+
                 <div class="main-bt-1">
+
+            
+
+
                     <div class="main-bt-12" style="background-color: white;" id="btRece"
                         data-quiet-profile-name="ultrasonic-fsk-fast" data-quiet-receive-text>
                         <div class="alert alert-danger hidden" data-quiet-receive-text-warning></div>
-                        <pre data-quiet-receive-text-target class="hidden">Your received text will show up here. Waiting...</pre>
-                        <button style="padding-top: 30px;padding-bottom: 30px;" type="button">
-                            <img src="img/receive_money.png" class="img-responsive" data-quiet-receive-text-button
-                                data-quiet-receiving-text="Listening...">
+                        <pre data-quiet-receive-text-target
+                            class="hidden">Your received text will show up here. Waiting...</pre>
+                        <button style="padding-top: 30px;padding-bottom: 30px;" type="button" data-quiet-receive-text-button
+                        data-quiet-receiving-text="Listening...">
+                            <img src="img/receive_money.png" class="img-responsive" >
                         </button>
                     </div>
                 </div>
             </div>
 
 
-            <pre result style="width: 80%; margin: 30px auto;">Waiting...</pre>
+
 
             <div class="div-cir">
                 <img src="img/icon_vnpt_money.png" class="img-responsive">
