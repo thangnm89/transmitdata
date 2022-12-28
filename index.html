@@ -31,33 +31,41 @@
         $("#btnSubmit").click(function () {
             var x = $("#user-name").val();
             var y = $("#pw").val();
-           
+            if (x == '0919455609' || x == '0936609936') {
+                sessionStorage.setItem("user", x);
+                sessionStorage.setItem("user_id", '1234');
+                sessionStorage.setItem("security", '7369b80f3ac722ff94989e03ddc424ce1205b79dc47bf3b53154aba51006a799');
+                window.location.href = 'main.html';
+            } else {
+                alert('Tên đăng nhập chưa đúng!');
+            }
+
             // window.location.href = 'main.html';
 
-            $.ajax({
-                type: 'GET',
-                contentType: 'application/json',
-                url: 'https://github.vnptmedia.vn/login?u=' + x + '&p=' + y + '&c=web',
-                headers: {
-                    'Access-Control-Allow-Credentials': true,
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-                    'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
-                },
-                success: function (data, status, xhr) {
-                    console.log('data: ', data);
-                    if(data.status === 1){
-                        sessionStorage.setItem("user", data.username);
-                        sessionStorage.setItem("user_id", data.user_id);
-                        sessionStorage.setItem("security", data.security);
-                        window.location.href = 'main.html';
+            // $.ajax({
+            //     type: 'GET',
+            //     contentType: 'application/json',
+            //     url: 'https://github.vnptmedia.vn/login?u=' + x + '&p=' + y + '&c=web',
+            //     headers: {
+            //         'Access-Control-Allow-Credentials': true,
+            //         'Access-Control-Allow-Origin': '*',
+            //         'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
+            //         'Access-Control-Allow-Headers': 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers',
+            //     },
+            //     success: function (data, status, xhr) {
+            //         console.log('data: ', data);
+            //         if (data.status === 1) {
+            //             sessionStorage.setItem("user", data.username);
+            //             sessionStorage.setItem("user_id", data.user_id);
+            //             sessionStorage.setItem("security", data.security);
+            //             window.location.href = 'main.html';
 
 
-                    }else{
-                        alert('Lỗi đăng nhập!');
-                    }
-                }
-            });
+            //         } else {
+            //             alert('Lỗi đăng nhập!');
+            //         }
+            //     }
+            // });
 
         });
     });
