@@ -39,6 +39,7 @@ var TextReceiver = (function() {
             onCreateFail: receiverOnReceiverCreateFail,
             onReceiveFail: receiverOnReceiveFail
         });
+        document.getElementById("result").innerHTML  = recvObj.target;
 
         recvObj.target.classList.remove('hidden');
     }
@@ -54,7 +55,7 @@ var TextReceiver = (function() {
             content: new ArrayBuffer(0),
             
         };
-        result = target;
+       
         var onBtnClick = function(e) { return onClick(e, recvObj); };
         recvObj.btn.addEventListener('click', onBtnClick, false);
     };
@@ -74,7 +75,7 @@ var TextReceiver = (function() {
 
     function onDOMLoad() {
         receivers = document.querySelectorAll('[data-quiet-receive-text]');
-        result = document.querySelector('[result]');
+       
         Quiet.addReadyCallback(onQuietReady, onQuietFail);
     };
 
