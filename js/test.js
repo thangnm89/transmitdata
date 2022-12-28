@@ -38,7 +38,7 @@ var TextReceiver = (function () {
     };
 
     function onDOMLoad() {
-        target = document.querySelector('[data-quiet-receive-text-target]');
+        target = document.getElementById("received-text");
         // warningbox = document.querySelector('[data-quiet-warning]');
         Quiet.addReadyCallback(onQuietReady, onQuietFail);
     };
