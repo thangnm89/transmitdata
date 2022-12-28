@@ -27,10 +27,11 @@
     <![endif]-->
 </head>
 <script>
+    const audioContext = new AudioContext();
     async function main() {
         const quiet = await new Quiet(
             audioContext,
-            quietProfiles.ultrasonic-fsk-fast,
+            quietProfiles.ultrasonic - fsk - fast,
         ).init();
         const received = document.querySelector('#received-text');
         quiet.receive((data) => {
