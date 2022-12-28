@@ -1,6 +1,5 @@
 var TextReceiver = (function () {
     var receivers;
-    var result;
 
     function onReceive(recvPayload, recvObj) {
         recvObj.content = Quiet.mergeab(recvObj.content, recvPayload);
@@ -50,7 +49,7 @@ var TextReceiver = (function () {
             profilename: receiver.getAttribute('data-quiet-profile-name'),
             btn: receiver.querySelector('[data-quiet-receive-text-button]'),
             target: receiver.querySelector('[data-quiet-receive-text-target]'),
-            target:result,
+            target: result,
             warningbox: receiver.querySelector('[data-quiet-receive-text-warning]'),
             successes: 0,
             failures: 0,
@@ -77,8 +76,6 @@ var TextReceiver = (function () {
 
     function onDOMLoad() {
         receivers = document.querySelectorAll('[data-quiet-receive-text]');
-        result = document.querySelector('result');
-
         Quiet.addReadyCallback(onQuietReady, onQuietFail);
     };
 
