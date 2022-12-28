@@ -6,7 +6,7 @@ var TextReceiver = (function () {
 
     function onReceive(recvPayload) {
         content = Quiet.mergeab(content, recvPayload);
-        console.log('----'+content);
+        console.log('----' + content);
         target.textContent = Quiet.ab2str(content);
         warningbox.classList.add("hidden");
     };
@@ -24,10 +24,11 @@ var TextReceiver = (function () {
 
     function onQuietReady() {
         var profilename = document.querySelector('[data-quiet-profile-name]').getAttribute('data-quiet-profile-name');
-        console.log('----'+profilename);
+        console.log('----' + profilename);
+        var receiverOnReceive = function (payload) { onReceive(payload); };
         Quiet.receiver({
             profile: profilename,
-            onReceive: onReceive,
+            onReceive: receiverOnReceive,
             onCreateFail: onReceiverCreateFail,
             onReceiveFail: onReceiveFail
         });
