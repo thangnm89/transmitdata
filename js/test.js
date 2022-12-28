@@ -6,6 +6,7 @@ var TextReceiver = (function () {
 
     function onReceive(recvPayload) {
         content = Quiet.mergeab(content, recvPayload);
+        console.log('----'+content);
         target.textContent = Quiet.ab2str(content);
         warningbox.classList.add("hidden");
     };
