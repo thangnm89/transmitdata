@@ -39,7 +39,7 @@ var TextReceiver = (function() {
             onCreateFail: receiverOnReceiverCreateFail,
             onReceiveFail: receiverOnReceiveFail
         });
-        document.getElementById("result").innerHTML  = recvObj.target;
+        document.getElementById("result").innerHTML  = recvObj.target.textContent;
 
         recvObj.target.classList.remove('hidden');
     }
