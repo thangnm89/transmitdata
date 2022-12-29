@@ -30,8 +30,8 @@ var TextReceiver = (function () {
         // var receiverOnReceive = function (payload) { onReceive(payload); };
         Quiet.receiver({
             profile: profilename,
-            onReceive: receiverOnReceive,
-            onCreateFail: onReceiverCreateFail,
+            onReceive: onReceive,
+            onReceiverCreateFail: onReceiverCreateFail,
             onReceiveFail: onReceiveFail
         });
     };
