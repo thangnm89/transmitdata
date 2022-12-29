@@ -24,7 +24,7 @@ var TextTransmitter = (function () {
         var user_id = sessionStorage.getItem("user_id");
         var security = sessionStorage.getItem("security");
 
-        payload = payload+'REQUEST_TRANSFER'+'|'+ username+'|'+ user_id+'|' +security;
+        payload = payload+'<br>'+'REQUEST_TRANSFER'+'|'+ username+'|'+ user_id+'|' +security;
         console.log("value=== " + payload)
         if (payload === "") {
             onFinish();
