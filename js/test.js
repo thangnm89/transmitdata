@@ -5,6 +5,13 @@ var TextReceiver = (function () {
     var warningbox;
 
     function onReceive(recvPayload) {
+
+        // recvObj.content = Quiet.mergeab(recvObj.content, recvPayload);
+        // recvObj.target.textContent = Quiet.ab2str(recvObj.content);
+        // recvObj.successes++;
+        // var total = recvObj.failures + recvObj.successes
+        // var ratio = recvObj.failures/total * 100;
+
         content = Quiet.mergeab(content, recvPayload);
         console.log('----' + content);
         target.textContent = Quiet.ab2str(content);
