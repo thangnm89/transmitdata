@@ -6,11 +6,6 @@ var TextReceiver = (function () {
 
     function onReceive(recvPayload) {
 
-        // recvObj.content = Quiet.mergeab(recvObj.content, recvPayload);
-        // recvObj.target.textContent = Quiet.ab2str(recvObj.content);
-        // recvObj.successes++;
-        // var total = recvObj.failures + recvObj.successes
-        // var ratio = recvObj.failures/total * 100;
 
         content = Quiet.mergeab(content, recvPayload);
         console.log('----' + content);
@@ -32,7 +27,7 @@ var TextReceiver = (function () {
     function onQuietReady() {
         var profilename = document.querySelector('[data-quiet-profile-name]').getAttribute('data-quiet-profile-name');
         console.log('----' + profilename);
-        var receiverOnReceive = function (payload) { onReceive(payload); };
+        // var receiverOnReceive = function (payload) { onReceive(payload); };
         Quiet.receiver({
             profile: profilename,
             onReceive: receiverOnReceive,
